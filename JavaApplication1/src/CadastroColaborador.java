@@ -15,10 +15,21 @@ public class CadastroColaborador{
     String[] funcao = new String[100];
     String[] salario = new String[100];
     /*
-    
+    Estatísticas: maior salário, menor salário, média dos salários cadastrados, média dos salários por filial
     */
     String[] filialAtuacao = new String[100];
     
+    public void cadastrar(){
+        //TODO implementar cadastro
+    }
+    
+    public void editar(){
+        //TODO implementar edição
+    }
+    
+    public void estatisticas (){
+        //TODO implementar estatisticas
+    }
     
     
     
