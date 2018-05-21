@@ -25,3 +25,4 @@ JavaApplication1/build.xml
 *.mf
 *.xml
 *.properties
+/nbproject/private/
