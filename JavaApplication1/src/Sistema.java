@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
  * @author Michelle de Jesus Rogério
  */
 public class Sistema{
-    CadastroCliente registroCliente = new CadastroCliente();
+    Menu selecaoMenu = new Menu();
 
     public void apresentarMenu() {
         int menu = Integer.parseInt(JOptionPane.showInputDialog(null,
@@ -25,18 +25,19 @@ public class Sistema{
         while (menu != 8001) {
             switch (menu) {
                 case 1:
-                    registroCliente.colaboradores();
+                    selecaoMenu.colaboradores();
+                    break;
                 case 2:
-                    registroCliente.fornecedores();
+                    selecaoMenu.fornecedores();
                     break;
                 case 3:
-                    registroCliente.produtos();
+                    selecaoMenu.produtos();
                     break;
                 case 4:
-                    registroCliente.filiais();
+                    selecaoMenu.filiais();
                     break;
                 case 5:
-                    registroCliente.sobre();
+                    selecaoMenu.sobre();
                     break;
                 default:
              JOptionPane.showMessageDialog(null, "Opção Inválida");

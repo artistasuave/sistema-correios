@@ -23,42 +23,29 @@ public class colaboradores {
     int atual = 0;
 
     public void cadastrar() {
-        //TODO implementar cadastro
-        nome[atual] = JOptionPane.showInputDialog("Insira o nome do colaborador");
-        cpf[atual] = JOptionPane.showInputDialog("Insira o CPF do colaborador").replace(".", "").replace("-","");
-        dataNascimento[atual] = JOptionPane.showInputDialog("Insira a data de nascimento do colaborador").replace(".", "").replace("-","").replace("/","");
-        telefone[atual] = JOptionPane.showInputDialog("Insira o telefone do colaborador");
-        email[atual] = JOptionPane.showInputDialog("Insira o email do colaborador");
-        dataContratacao[atual] = JOptionPane.showInputDialog("Insira a data de contratação do colaborador");
-        regimeContratacao[atual] = JOptionPane.showInputDialog("Insira o regime de contratação do colaborador");
-        funcao[atual] = JOptionPane.showInputDialog("Insira a função do colaborador");
-        salario[atual] = JOptionPane.showInputDialog("Insira o salário do colaborador");
-        filialAtuacao[atual] = JOptionPane.showInputDialog("Insira a filial de atuação do colaborador");
+        solicitarInformacao(atual);
         atual++;
     }
 
     public void buscarPeloNome() {
-        //TODO implementar busca
-        String busca = JOptionPane.showInputDialog("Digite o nome parcial do colaborador para a busca");
+        String buscaNome = JOptionPane.showInputDialog("Digite o nome parcial do colaborador para a busca");
         for (int i = 0; i < atual; i++) {
-            if (nomes[i].contains(busca)) {
-                JOptionPane.showMesssageDialog(null,
-                        "Nome: " + nome[i]
-                        + "\nCPF: " + cpf[i]
-                        + "\nData de Nascimento: " + dataNascimento[i]
-                        + +"\nTelefone: " + telefone[i]
-                        + "\nEmail: " + email[i]
-                        + "\nData da Contratação: " + dataContratacao[i]
-                        + "\nRegime de Contratação: " + regimeContratacao[i]
-                        + "\nFunção: " + funcao[i]
-                        + "\nSalário: " + salario[i]
-                        + "\nFilial de Atuação: " + filialAtuacao[i]);
+            if (nome[i].contains(buscaNome)) {
+                apresentarInformacao(i);
             }
         }
     }
+
     public void buscarPorCPF() {
-    //TODO implementar busca por CPF
-}
+        String buscaCPF = JOptionPane.showInputDialog("Digite o CPF para a busca");
+        for (int i = 0; i < atual; i++) {
+            if (cpf[i].equals(buscaCPF)) {
+                apresentarInformacao(i);
+                return;
+            }
+        }
+        JOptionPane.showMessageDialog(null, "CPF não encontrado");
+    }
 
     public void editar() {
         //TODO implementar edição
@@ -68,4 +55,30 @@ public class colaboradores {
         //TODO implementar estatisticas
     }
 
+    public void solicitarInformacao(int posicao) {
+        nome[posicao] = JOptionPane.showInputDialog("Insira o nome do colaborador");
+        cpf[posicao] = JOptionPane.showInputDialog("Insira o CPF do colaborador").replace(".", "").replace("-", "");
+        dataNascimento[posicao] = JOptionPane.showInputDialog("Insira a data de nascimento do colaborador").replace(".", "").replace("-", "").replace("/", "");
+        telefone[posicao] = JOptionPane.showInputDialog("Insira o telefone do colaborador");
+        email[posicao] = JOptionPane.showInputDialog("Insira o email do colaborador");
+        dataContratacao[posicao] = JOptionPane.showInputDialog("Insira a data de contratação do colaborador").replace(".", "").replace("-", "").replace("/", "");
+        regimeContratacao[posicao] = JOptionPane.showInputDialog("Insira o regime de contratação do colaborador");
+        funcao[posicao] = JOptionPane.showInputDialog("Insira a função do colaborador");
+        salario[posicao] = JOptionPane.showInputDialog("Insira o salário do colaborador");
+        filialAtuacao[posicao] = JOptionPane.showInputDialog("Insira a filial de atuação do colaborador");
+    }
+
+    public void apresentarInformacao(int posicao) {
+        JOptionPane.showMessageDialog(null,
+                "Nome: " + nome[posicao]
+                + "\nCPF: " + cpf[posicao]
+                + "\nData de Nascimento: " + dataNascimento[posicao]
+                + "\nTelefone: " + telefone[posicao]
+                + "\nEmail: " + email[posicao]
+                + "\nData da Contratação: " + dataContratacao[posicao]
+                + "\nRegime de Contratação: " + regimeContratacao[posicao]
+                + "\nFunção: " + funcao[posicao]
+                + "\nSalário: " + salario[posicao]
+                + "\nFilial de Atuação: " + filialAtuacao[posicao]);
+    }
 }
