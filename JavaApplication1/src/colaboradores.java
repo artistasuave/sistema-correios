@@ -4,23 +4,59 @@ import javax.swing.JOptionPane;
 /**
  * @author Michelle de Jesus Rogério
  */
-public class colaboradores {
+public class Colaboradores {
+    Colaboradores colaboradores = new Colaboradores();
+    int menu = Integer.parseInt(JOptionPane.showInputDialog(null,
+            "1 - Cadastrar Colaborador"
+            + "\n2 - Buscar por Nome"
+            + "\n3 - Buscar por CPF"
+            + "\n4 - Editar"
+            + "\n5 - Estatisticas"
+            + "\n8001 - SAIR"));
 
-    String[] nome = new String[100];
-    String[] cpf = new String[100];
-    String[] dataNascimento = new String[100];
-    String[] telefone = new String[100];
-    String[] email = new String[100];
-    String[] dataContratacao = new String[100];
-    // Estatísticas: colaborador+antigo, colaborador mais jovem
-    String[] regimeContratacao = new String[100];
-    String[] funcao = new String[100];
-    String[] salario = new String[100];
-    /*
-     Estatísticas: maior salário, menor salário, média dos salários cadastrados, média dos salários por filial
-     */
-    String[] filialAtuacao = new String[100];
-    int atual = 0;
+    while(menu != 8001){
+
+            switch (menu) {
+            case 1:
+                colaboradores.cadastrar();
+                break;
+            case 2:
+                colaboradores.buscarPeloNome();
+                break;
+            case 3:
+                colaboradores.buscarPorCPF();
+                break;
+            case 4:
+                colaboradores.editar();
+            case 5:
+                colaboradores.estatisticas();
+            default:
+                JOptionPane.showMessageDialog(null, "Opção Inválida");
+        }
+        menu = Integer.parseInt(JOptionPane.showInputDialog(null,
+                "1 - Cadastrar"
+                + "\n2 - Buscar"
+                + "\n3 - Editar"
+                + "\n4 - Estatísticas"
+                + "\n8001 - Sair"));
+}
+        String[] nome = new String[100];
+        String[] cpf = new String[100];
+        String[] dataNascimento = new String[100];
+        String[] telefone = new String[100];
+        String[] email = new String[100];
+        String[] dataContratacao = new String[100];
+        // Estatísticas: colaborador+antigo, colaborador mais jovem
+        String[] regimeContratacao = new String[100];
+        String[] funcao = new String[100];
+        String[] salario = new String[100];
+        /*
+         Estatísticas: maior salário, menor salário, média dos salários cadastrados, média dos salários por filial
+         */
+        String[] filialAtuacao = new String[100];
+        int atual = 0;
+
+    
 
     public void cadastrar() {
         solicitarInformacao(atual);

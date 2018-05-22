@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
  * @author Michelle de Jesus Rogério
  */
 public class Sistema{
-    Menu selecaoMenu = new Menu();
+    Colaboradores colaboradores = new Colaboradores();
 
     public void apresentarMenu() {
         int menu = Integer.parseInt(JOptionPane.showInputDialog(null,
@@ -43,36 +43,5 @@ public class Sistema{
              JOptionPane.showMessageDialog(null, "Opção Inválida");
              }
             }
-
-            /*
-             int menu = Integer.parseInt(JOptionPane.showInputDialog(null,
-             "1 - Cadastrar"
-             + "\n2 - Buscar"
-             + "\n3 - Editar"
-             + "\n4 - Estatísticas"
-             + "\n8001 - Sair"));
-
-             while (menu != 8001) {
-
-             switch (menu) {
-             case 1:
-             registroCliente.cadastrar();
-             break;
-             case 2:
-             registroCliente.editar();
-             break;
-             case 3:
-             registroCliente.estatísticas();
-             break;
-             default:
-             JOptionPane.showMessageDialog(null, "Opção Inválida");
-             }
-             menu = Integer.parseInt(JOptionPane.showInputDialog(null,
-             "1 - Cadastrar"
-             + "\n2 - Buscar"
-             + "\n3 - Editar"
-             + "\n4 - Estatísticas"
-             + "\n8001 - Sair"));
-             */
-        }
     }
+}
