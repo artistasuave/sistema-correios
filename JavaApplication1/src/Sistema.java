@@ -10,52 +10,68 @@ import javax.swing.JOptionPane;
  *
  * @author Michelle de Jesus Rogério
  */
-public class Sistema {
-    
-    /* TODO MENU principal:
-    - COLABORADORES
-    - FORNECEDORES
-    - PRODUTOS/SERVIÇOS
-    - FILIAL
-    */
-
+public class Sistema{
     CadastroCliente registroCliente = new CadastroCliente();
 
     public void apresentarMenu() {
         int menu = Integer.parseInt(JOptionPane.showInputDialog(null,
-                "1 - Cadastrar Cliente"
-                + "\n2 - CADASTRAR"
-                + "\n3 - EDITAR"
-                + "\n4 - ESTATÍSTICAS"
+                "1 - Colaboradores"
+                + "\n2 - Fornecedores"
+                + "\n3 - Produtos/Serviços"
+                + "\n4 - Filiais"
                 + "\n5 - SOBRE"
                 + "\n8001 - Sair"));
 
         while (menu != 8001) {
-
             switch (menu) {
                 case 1:
-                    registroCliente.cadastrar();
-                    break;
+                    registroCliente.colaboradores();
                 case 2:
-                    registroCliente.editar();
+                    registroCliente.fornecedores();
                     break;
                 case 3:
-                    registroCliente.estatísticas();
+                    registroCliente.produtos();
                     break;
                 case 4:
+                    registroCliente.filiais();
+                    break;
+                case 5:
                     registroCliente.sobre();
                     break;
                 default:
-                    JOptionPane.showMessageDialog(null, "Opção Inválida");
+             JOptionPane.showMessageDialog(null, "Opção Inválida");
+             }
             }
-            menu = Integer.parseInt(JOptionPane.showInputDialog(null,
-                    "1 - Cadastrar Cliente"
-                    + "\n2 - CADASTRAR"
-                    + "\n3 - EDITAR"
-                    + "\n4 - ESTATÍSTICAS"
-                    + "\n5 - SOBRE"
-                    + "\n8001 - Sair"));
+
+            /*
+             int menu = Integer.parseInt(JOptionPane.showInputDialog(null,
+             "1 - Cadastrar"
+             + "\n2 - Buscar"
+             + "\n3 - Editar"
+             + "\n4 - Estatísticas"
+             + "\n8001 - Sair"));
+
+             while (menu != 8001) {
+
+             switch (menu) {
+             case 1:
+             registroCliente.cadastrar();
+             break;
+             case 2:
+             registroCliente.editar();
+             break;
+             case 3:
+             registroCliente.estatísticas();
+             break;
+             default:
+             JOptionPane.showMessageDialog(null, "Opção Inválida");
+             }
+             menu = Integer.parseInt(JOptionPane.showInputDialog(null,
+             "1 - Cadastrar"
+             + "\n2 - Buscar"
+             + "\n3 - Editar"
+             + "\n4 - Estatísticas"
+             + "\n8001 - Sair"));
+             */
         }
     }
-
-}
