@@ -25,8 +25,8 @@ public class colaboradores {
     public void cadastrar() {
         //TODO implementar cadastro
         nome[atual] = JOptionPane.showInputDialog("Insira o nome do colaborador");
-        cpf[atual] = JOptionPane.showInputDialog("Insira o CPF do colaborador");
-        dataNascimento[atual] = JOptionPane.showInputDialog("Insira a data de nascimento do colaborador");
+        cpf[atual] = JOptionPane.showInputDialog("Insira o CPF do colaborador").replace(".", "").replace("-","");
+        dataNascimento[atual] = JOptionPane.showInputDialog("Insira a data de nascimento do colaborador").replace(".", "").replace("-","").replace("/","");
         telefone[atual] = JOptionPane.showInputDialog("Insira o telefone do colaborador");
         email[atual] = JOptionPane.showInputDialog("Insira o email do colaborador");
         dataContratacao[atual] = JOptionPane.showInputDialog("Insira a data de contratação do colaborador");
@@ -45,17 +45,20 @@ public class colaboradores {
                 JOptionPane.showMesssageDialog(null,
                         "Nome: " + nome[i]
                         + "\nCPF: " + cpf[i]
-                        + "\nData de Nascimento: "+dataNascimento[i] +
-                                +"\nTelefone: "+telefone[i]+
-                                "\nEmail: "+email[i]+
-                                "\nData da Contratação: "+dataContratacao[i]+
-                                "\nRegime de Contratação: "+regimeContratacao[i]+
-                                "\nFunção: "+funcao[i]+
-                                "\nSalário: "+salario[i]+
-                                "\nFilial de Atuação: "+filialAtuacao[i]);
+                        + "\nData de Nascimento: " + dataNascimento[i]
+                        + +"\nTelefone: " + telefone[i]
+                        + "\nEmail: " + email[i]
+                        + "\nData da Contratação: " + dataContratacao[i]
+                        + "\nRegime de Contratação: " + regimeContratacao[i]
+                        + "\nFunção: " + funcao[i]
+                        + "\nSalário: " + salario[i]
+                        + "\nFilial de Atuação: " + filialAtuacao[i]);
             }
         }
     }
+    public void buscarPorCPF() {
+    //TODO implementar busca por CPF
+}
 
     public void editar() {
         //TODO implementar edição

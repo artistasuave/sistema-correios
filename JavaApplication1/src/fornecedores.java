@@ -22,7 +22,7 @@ public class fornecedores {
     public void cadastrar(){
     //TODO implementar cadastro
     razaoSocial[atual] = JOptionPane.showInputDialog("Insira a Razão Social");
-    cnpj[atual] = JOptionPane.showInputDialog("Insira o CNPJ");
+    cnpj[atual] = JOptionPane.showInputDialog("Insira o CNPJ").replace(".", "").replace("-","").replace("/","");
     material[atual] = JOptionPane.showInputDialog("Insira o material ou serviço fornecido");
     formaPagamento [atual] = JOptionPane.showInputDialog(null,
             "Selecione a forma de pagamento",
@@ -33,6 +33,7 @@ public class fornecedores {
                 "", "Dinheiro", "Permuta de Serviços", "Fatura a prazo"
             },
             ""
+            .toString()
             );
     periodoContratacao [atual] = JOptionPane.showInputDialog(null,
             "Selecione a periodização da contratação",
@@ -43,8 +44,22 @@ public class fornecedores {
                 "", "Semanal", "Quinzenal", "Mensal", "Semestral"
             },
             ""
+            .toString()
             );
-    validadeContrato
+    validadeContrato [atual] = JOptionPane.showInputDialog("Digite a data de validade do contrato").replace(".", "").replace("-","").replace("/","");
+    //TODO criar alerta caso a data de validade seja menor do que 1 mês
+    
+    regimeContratacao [atual] = JOptionPane.showInputDialog(null,
+            "Selecione o método de contratação",
+            "CONTRATAÇÃO DO FORNECEDOR",
+            JOptionPane.QUESTION_MESSAGE,
+            null,
+            new Object[]{
+                "", "Licitação", "Contrato Particular"
+            },
+            ""
+            .toString()
+            );
 }
     public void buscarPorRazaoSocial(){
     //TODO implementar busca Razão Social
