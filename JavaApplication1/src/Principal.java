@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 /**
  * @author Michelle de Jesus Rogério
  */
@@ -16,5 +17,4 @@ public class Principal {
         Sistema sistema = new Sistema();
         sistema.apresentarMenu();
     }
-    
 }

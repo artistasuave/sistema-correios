@@ -10,52 +10,38 @@ import javax.swing.JOptionPane;
  *
  * @author Michelle de Jesus Rogério
  */
-public class Sistema {
-    
-    /* TODO MENU principal:
-    - COLABORADORES
-    - FORNECEDORES
-    - PRODUTOS/SERVIÇOS
-    - FILIAL
-    */
-
-    CadastroCliente registroCliente = new CadastroCliente();
+public class Sistema{
+    Colaboradores colaboradores = new Colaboradores();
 
     public void apresentarMenu() {
         int menu = Integer.parseInt(JOptionPane.showInputDialog(null,
-                "1 - Cadastrar Cliente"
-                + "\n2 - CADASTRAR"
-                + "\n3 - EDITAR"
-                + "\n4 - ESTATÍSTICAS"
+                "1 - Colaboradores"
+                + "\n2 - Fornecedores"
+                + "\n3 - Produtos/Serviços"
+                + "\n4 - Filiais"
                 + "\n5 - SOBRE"
                 + "\n8001 - Sair"));
 
         while (menu != 8001) {
-
             switch (menu) {
                 case 1:
-                    registroCliente.cadastrar();
+                    selecaoMenu.colaboradores();
                     break;
                 case 2:
-                    registroCliente.editar();
+                    selecaoMenu.fornecedores();
                     break;
                 case 3:
-                    registroCliente.estatísticas();
+                    selecaoMenu.produtos();
                     break;
                 case 4:
-                    registroCliente.sobre();
+                    selecaoMenu.filiais();
+                    break;
+                case 5:
+                    selecaoMenu.sobre();
                     break;
                 default:
-                    JOptionPane.showMessageDialog(null, "Opção Inválida");
+             JOptionPane.showMessageDialog(null, "Opção Inválida");
+             }
             }
-            menu = Integer.parseInt(JOptionPane.showInputDialog(null,
-                    "1 - Cadastrar Cliente"
-                    + "\n2 - CADASTRAR"
-                    + "\n3 - EDITAR"
-                    + "\n4 - ESTATÍSTICAS"
-                    + "\n5 - SOBRE"
-                    + "\n8001 - Sair"));
-        }
     }
-
 }
