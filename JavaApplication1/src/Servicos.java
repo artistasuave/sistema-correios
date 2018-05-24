@@ -35,7 +35,7 @@ public class Servicos {
                     JOptionPane.showMessageDialog(null, "Opção invalida");
         }
            menuDeServicos = Integer.parseInt(JOptionPane.showInputDialog(null,
-                     "1 - Cadastrar"
+                      "1 - Cadastrar"
                     + "\n2 - Buscar"
                     + "\n3 - Editar"
                     + "\n8001 - Sair"));
@@ -109,7 +109,6 @@ public void solicitarInformacao(int posicao){
     valorPago[posicao] = Integer.parseInt(JOptionPane.showInputDialog("valor do serviço"));
     abrangencia[posicao] = JOptionPane.showInputDialog(null, "Região de abrangência", "", JOptionPane.QUESTION_MESSAGE,
             null, new Object[]{"Norte", "Nordeste", "centro-Oeste", "Sudeste","Sul"}, "Sul").toString();
-    //colocar a caixa de dialogo contendo as 
     tempoMaxEntrega[posicao] = Integer.parseInt(JOptionPane.showInputDialog("Tempo máximo da entrega"));
     pesoMaxCorrespodencia[posicao] = Double.parseDouble(JOptionPane.showInputDialog("Peso máximo da correspodêcia"));
     tributacao[posicao] = JOptionPane.showInputDialog("Tributação do serviço");

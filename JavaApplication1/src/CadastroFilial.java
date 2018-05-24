@@ -12,7 +12,54 @@ import javax.swing.JOptionPane;
  */
 public class CadastroFilial {
     
-    static String[] nomes = new String[100];
+   public void menuCadastroFilial(){
+     
+       int menuCadastroFiliais = Integer.parseInt(JOptionPane.showInputDialog(null, 
+                         "1 - Cadastrar Filial"
+                        +"2 - Buscar por nome"
+                        +"3 - Buscar pelo CNPJ"
+                        +"4 - Editar"
+                        +"5 - Estatisticas"         
+                        +"8001 - SAIR"));
+       
+       while(menuCadastroFiliais != 8001){
+           
+                 switch(menuCadastroFiliais){
+                     case 1:
+                         Cadastro();
+                         break;
+                     case 2:
+                         buscarPeloNome();
+                         break;
+                     case 3:
+                         buscaCNPJ();
+                         break;
+                     case 4:
+                         editar();
+                         break;
+                     case 5:
+                         estatisticas();
+                         \\add as estatisticas
+                 }
+   }
+   }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    String[] nomes = new String[100];
     String[] cnpjs = new String[100];
     String[] cidades = new String[100];
     String[] telefones = new String[100];
