@@ -17,6 +17,7 @@ public class Colaboradores {
                 + "\n8001 - SAIR"));
 
         while (menuColaboradores != 8001) {
+            //rever funcionamento do menu (duplicado)
 
             switch (menuColaboradores) {
                 case 1:
@@ -97,7 +98,23 @@ public class Colaboradores {
     }
 
     public void estatisticas() {
-        //TODO implementar estatisticas
+        /*TODO implementar estatisticas: 
+        - Data da contratação: colaborador mais jovem e colaborador mais antigo
+        dataContratação
+        MAX.VALUE*/
+        int maisIdade = Integer.MIN_VALUE, menosIdade = Integer.MAX_VALUE;
+        double maiorSalario = Integer.MIN_VALUE, menorSalario = Integer.MAX_VALUE;
+        
+        if (salario>maiorSalario){
+            maiorSalario = salario;
+        }
+        
+        /*
+        - SALÁRIO (double)
+        salario
+        int maiorSalario = Integer.MIN_VALUE, menorSalario = Integer.MAX_VALUE;
+        double mediaSalario = 0, mediaPorFilial = 0;
+        */
     }
 
     public void solicitarInformacao(int posicao) {
@@ -121,7 +138,7 @@ public class Colaboradores {
                     "")
                     .toString();
             funcao[posicao] = JOptionPane.showInputDialog("Insira a função do colaborador");
-            salario[posicao] = JOptionPane.showInputDialog("Insira o salário do colaborador");
+            salario[posicao] = Double.parseDouble(JOptionPane.showInputDialog("Insira o salário do colaborador"));
 
             Object[] nomes = new Object[CadastroFilial.atual];
             for (int i = 0; i < CadastroFilial.atual; i++) {
