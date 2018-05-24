@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
  */
 public class CadastroFilial {
     
-    String[] nomes = new String[100];
+    static String[] nomes = new String[100];
     String[] cnpjs = new String[100];
     String[] cidades = new String[100];
     String[] telefones = new String[100];
@@ -20,7 +20,7 @@ public class CadastroFilial {
     int[] quantMaxColaboradores = new int[100];
     double[] tamanhoMaxEstoques = new double[100];
     double[] orcamentMaxMensal = new double[100];
-    int atual = 0;
+    static int atual = 0;
 
 public void Cadastro(){
     solicitarInformacao(atual);

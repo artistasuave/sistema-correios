@@ -10,13 +10,14 @@ import javax.swing.JOptionPane;
  *
  * @author Michelle de Jesus Rogério
  */
-public class Sistema{
+public class Sistema {
+
     Colaboradores colaboradores = new Colaboradores();
     Fornecedores fornecedor = new Fornecedores();
     Servicos servicos = new Servicos();
     CadastroFilial filiais = new CadastroFilial();
     About sobre = new About();
-    
+
     public void apresentarMenu() {
         int menu = Integer.parseInt(JOptionPane.showInputDialog(null,
                 "1 - Colaboradores"
@@ -44,8 +45,16 @@ public class Sistema{
                     sobre.menuAbout();
                     break;
                 default:
-             JOptionPane.showMessageDialog(null, "Opção Inválida");
-             }
+                    JOptionPane.showMessageDialog(null, "Opção Inválida");
             }
+            menu = Integer.parseInt(JOptionPane.showInputDialog(null,
+                    "1 - Colaboradores"
+                    + "\n2 - Fornecedores"
+                    + "\n3 - Produtos/Serviços"
+                    + "\n4 - Filiais"
+                    + "\n5 - SOBRE"
+                    + "\n8001 - Sair"));
+
+        }
     }
 }

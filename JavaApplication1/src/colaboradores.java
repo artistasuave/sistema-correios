@@ -87,6 +87,13 @@ public class Colaboradores {
 
     public void editar() {
         //TODO implementar edição
+        String busca = JOptionPane.showInputDialog("Digite o nome para editar");
+        for (int i = 0; i < atual; i++) {
+            if (nome[i].equals(busca)) {
+                solicitarInformacao(i);
+                return;
+            }
+        }
     }
 
     public void estatisticas() {
@@ -94,16 +101,44 @@ public class Colaboradores {
     }
 
     public void solicitarInformacao(int posicao) {
-        nome[posicao] = JOptionPane.showInputDialog("Insira o nome do colaborador");
-        cpf[posicao] = JOptionPane.showInputDialog("Insira o CPF do colaborador").replace(".", "").replace("-", "");
-        dataNascimento[posicao] = JOptionPane.showInputDialog("Insira a data de nascimento do colaborador").replace(".", "").replace("-", "").replace("/", "");
-        telefone[posicao] = JOptionPane.showInputDialog("Insira o telefone do colaborador");
-        email[posicao] = JOptionPane.showInputDialog("Insira o email do colaborador");
-        dataContratacao[posicao] = JOptionPane.showInputDialog("Insira a data de contratação do colaborador").replace(".", "").replace("-", "").replace("/", "");
-        regimeContratacao[posicao] = JOptionPane.showInputDialog("Insira o regime de contratação do colaborador");
-        funcao[posicao] = JOptionPane.showInputDialog("Insira a função do colaborador");
-        salario[posicao] = JOptionPane.showInputDialog("Insira o salário do colaborador");
-        filialAtuacao[posicao] = JOptionPane.showInputDialog("Insira a filial de atuação do colaborador");
+        if (CadastroFilial.atual == 0) {
+            // mensagem
+        } else {
+
+            nome[posicao] = JOptionPane.showInputDialog("Insira o nome do colaborador");
+            cpf[posicao] = JOptionPane.showInputDialog("Insira o CPF do colaborador").replace(".", "").replace("-", "");
+            dataNascimento[posicao] = JOptionPane.showInputDialog("Insira a data de nascimento do colaborador").replace(".", "").replace("-", "").replace("/", "");
+            telefone[posicao] = JOptionPane.showInputDialog("Insira o telefone do colaborador");
+            email[posicao] = JOptionPane.showInputDialog("Insira o email do colaborador");
+            dataContratacao[posicao] = JOptionPane.showInputDialog("Insira a data de contratação do colaborador").replace(".", "").replace("-", "").replace("/", "");
+            regimeContratacao[posicao] = JOptionPane.showInputDialog(null,
+                    "Selecione a forma de pagamento",
+                    "REGIME DE CONTRATAÇÃO",
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,
+                    new Object[]{
+                        "", "Concursado", "Terceirizado",},
+                    "")
+                    .toString();
+            funcao[posicao] = JOptionPane.showInputDialog("Insira a função do colaborador");
+            salario[posicao] = JOptionPane.showInputDialog("Insira o salário do colaborador");
+
+            Object[] nomes = new Object[CadastroFilial.atual];
+            for (int i = 0; i < CadastroFilial.atual; i++) {
+                nomes[i] = CadastroFilial.nomes[i];
+            }
+
+            filialAtuacao[posicao]
+                    // listar valores da variável 'nomes' do cadastro de filiais como menu
+                    = JOptionPane.showInputDialog(null,
+                            "Selecione a forma de pagamento",
+                            "FILIAIS DE ATUAÇÃO",
+                            JOptionPane.QUESTION_MESSAGE,
+                            null,
+                            nome,
+                            "")
+                    .toString();
+        }
     }
 
     public void apresentarInformacao(int posicao) {

@@ -42,7 +42,7 @@ public class Fornecedores {
                 default:
                     JOptionPane.showMessageDialog(null, "Opção Inválida");
             }
-            menu = Integer.parseInt(JOptionPane.showInputDialog(null,
+            menuFornecedores = Integer.parseInt(JOptionPane.showInputDialog(null,
                     "1 - Cadastrar"
                     + "\n2 - Buscar"
                     + "\n3 - Editar"
