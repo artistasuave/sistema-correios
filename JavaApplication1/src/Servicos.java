@@ -39,22 +39,11 @@ public class Servicos {
                     + "\n2 - Buscar"
                     + "\n3 - Editar"
                     + "\n8001 - Sair"));
-                   
-     
-    }
-    
     
     }
+    }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     String[] nomes = new String[100];
     String[] descricao = new String[100];
     double[] valorPago = new double[100];
@@ -118,7 +107,9 @@ public void solicitarInformacao(int posicao){
     nomes[posicao] = JOptionPane.showInputDialog("Digite o nome do serviço").trim();
     descricao[posicao] = JOptionPane.showInputDialog("Descrição do serviço");
     valorPago[posicao] = Integer.parseInt(JOptionPane.showInputDialog("valor do serviço"));
-    abrangencia[posicao] = JOptionPane.showInputDialog("Abrangência");
+    abrangencia[posicao] = JOptionPane.showInputDialog(null, "Região de abrangência", "", JOptionPane.QUESTION_MESSAGE,
+            null, new Object[]{"Norte", "Nordeste", "centro-Oeste", "Sudeste","Sul"}, "Sul").toString();
+    //colocar a caixa de dialogo contendo as 
     tempoMaxEntrega[posicao] = Integer.parseInt(JOptionPane.showInputDialog("Tempo máximo da entrega"));
     pesoMaxCorrespodencia[posicao] = Double.parseDouble(JOptionPane.showInputDialog("Peso máximo da correspodêcia"));
     tributacao[posicao] = JOptionPane.showInputDialog("Tributação do serviço");
