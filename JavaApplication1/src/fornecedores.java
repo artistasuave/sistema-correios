@@ -11,41 +11,45 @@ import javax.swing.JOptionPane;
  * @author Michelle de Jesus Rogério
  */
 public class Fornecedores {
-    Fornecedores fornecedores = new Fornecedores();
-    int menu = Integer.parseInt(JOptionPane.showInputDialog(null,
-            "1 - Cadastrar Fornecedor"
-            + "\n2 - Buscar por Razão Social"
-            + "\n3 - Buscar por CNPJ"
-            + "\n4 - Listar"
-            + "\n5 - Editar"
-            + "\n8001 - SAIR"));
 
-    while(menu != 8001){
+    public void menuFornecedor() {
+
+        Fornecedores fornecedores = new Fornecedores();
+        int menu = Integer.parseInt(JOptionPane.showInputDialog(null,
+                "1 - Cadastrar Fornecedor"
+                + "\n2 - Buscar por Razão Social"
+                + "\n3 - Buscar por CNPJ"
+                + "\n4 - Listar"
+                + "\n5 - Editar"
+                + "\n8001 - SAIR"));
+
+        while (menu != 8001) {
 
             switch (menu) {
-            case 1:
-                fornecedores.cadastrar();
-                break;
-            case 2:
-                fornecedores.buscarPorRazaoSocial();
-                break;
-            case 3:
-                fornecedores.buscarPorCNPJ();
-                break;
-            case 4:
-                fornecedores.listar();
-            case 5:
-                fornecedores.editar();
-            default:
-                JOptionPane.showMessageDialog(null, "Opção Inválida");
+                case 1:
+                    fornecedores.cadastrar();
+                    break;
+                case 2:
+                    fornecedores.buscarPorRazaoSocial();
+                    break;
+                case 3:
+                    fornecedores.buscarPorCNPJ();
+                    break;
+                case 4:
+                    fornecedores.listar();
+                case 5:
+                    fornecedores.editar();
+                default:
+                    JOptionPane.showMessageDialog(null, "Opção Inválida");
+            }
+            menu = Integer.parseInt(JOptionPane.showInputDialog(null,
+                    "1 - Cadastrar"
+                    + "\n2 - Buscar"
+                    + "\n3 - Editar"
+                    + "\n4 - Estatísticas"
+                    + "\n8001 - Sair"));
         }
-        menu = Integer.parseInt(JOptionPane.showInputDialog(null,
-                "1 - Cadastrar"
-                + "\n2 - Buscar"
-                + "\n3 - Editar"
-                + "\n4 - Estatísticas"
-                + "\n8001 - Sair"));
-}
+    }
     String[] razaoSocial = new String[100];
     String[] cnpj = new String[100];
     String[] material = new String[100];

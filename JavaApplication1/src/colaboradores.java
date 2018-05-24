@@ -5,58 +5,60 @@ import javax.swing.JOptionPane;
  * @author Michelle de Jesus Rogério
  */
 public class Colaboradores {
-    Colaboradores colaboradores = new Colaboradores();
-    int menu = Integer.parseInt(JOptionPane.showInputDialog(null,
-            "1 - Cadastrar Colaborador"
-            + "\n2 - Buscar por Nome"
-            + "\n3 - Buscar por CPF"
-            + "\n4 - Editar"
-            + "\n5 - Estatisticas"
-            + "\n8001 - SAIR"));
 
-    while(menu != 8001){
+    public void menuColaborador() {
 
-            switch (menu) {
-            case 1:
-                colaboradores.cadastrar();
-                break;
-            case 2:
-                colaboradores.buscarPeloNome();
-                break;
-            case 3:
-                colaboradores.buscarPorCPF();
-                break;
-            case 4:
-                colaboradores.editar();
-            case 5:
-                colaboradores.estatisticas();
-            default:
-                JOptionPane.showMessageDialog(null, "Opção Inválida");
+        int menuColaboradores = Integer.parseInt(JOptionPane.showInputDialog(null,
+                "1 - Cadastrar Colaborador"
+                + "\n2 - Buscar por Nome"
+                + "\n3 - Buscar por CPF"
+                + "\n4 - Editar"
+                + "\n5 - Estatisticas"
+                + "\n8001 - SAIR"));
+
+        while (menuColaboradores != 8001) {
+
+            switch (menuColaboradores) {
+                case 1:
+                    cadastrar();
+                    break;
+                case 2:
+                    buscarPeloNome();
+                    break;
+                case 3:
+                    buscarPeloCPF();
+                    break;
+                case 4:
+                    editar();
+                case 5:
+                    estatisticas();
+                default:
+                    JOptionPane.showMessageDialog(null, "Opção Inválida");
+            }
+            menuColaboradores = Integer.parseInt(JOptionPane.showInputDialog(null,
+                    "1 - Cadastrar"
+                    + "\n2 - Buscar"
+                    + "\n3 - Editar"
+                    + "\n4 - Estatísticas"
+                    + "\n8001 - Sair"));
         }
-        menu = Integer.parseInt(JOptionPane.showInputDialog(null,
-                "1 - Cadastrar"
-                + "\n2 - Buscar"
-                + "\n3 - Editar"
-                + "\n4 - Estatísticas"
-                + "\n8001 - Sair"));
-}
-        String[] nome = new String[100];
-        String[] cpf = new String[100];
-        String[] dataNascimento = new String[100];
-        String[] telefone = new String[100];
-        String[] email = new String[100];
-        String[] dataContratacao = new String[100];
-        // Estatísticas: colaborador+antigo, colaborador mais jovem
-        String[] regimeContratacao = new String[100];
-        String[] funcao = new String[100];
-        String[] salario = new String[100];
-        /*
-         Estatísticas: maior salário, menor salário, média dos salários cadastrados, média dos salários por filial
-         */
-        String[] filialAtuacao = new String[100];
-        int atual = 0;
+    }
 
-    
+    String[] nome = new String[100];
+    String[] cpf = new String[100];
+    String[] dataNascimento = new String[100];
+    String[] telefone = new String[100];
+    String[] email = new String[100];
+    String[] dataContratacao = new String[100];
+    // Estatísticas: colaborador+antigo, colaborador mais jovem
+    String[] regimeContratacao = new String[100];
+    String[] funcao = new String[100];
+    String[] salario = new String[100];
+    /*
+     Estatísticas: maior salário, menor salário, média dos salários cadastrados, média dos salários por filial
+     */
+    String[] filialAtuacao = new String[100];
+    int atual = 0;
 
     public void cadastrar() {
         solicitarInformacao(atual);
@@ -72,7 +74,7 @@ public class Colaboradores {
         }
     }
 
-    public void buscarPorCPF() {
+    public void buscarPeloCPF() {
         String buscaCPF = JOptionPane.showInputDialog("Digite o CPF para a busca");
         for (int i = 0; i < atual; i++) {
             if (cpf[i].equals(buscaCPF)) {
@@ -117,4 +119,5 @@ public class Colaboradores {
                 + "\nSalário: " + salario[posicao]
                 + "\nFilial de Atuação: " + filialAtuacao[posicao]);
     }
+
 }

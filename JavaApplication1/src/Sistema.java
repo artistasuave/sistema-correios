@@ -12,7 +12,10 @@ import javax.swing.JOptionPane;
  */
 public class Sistema{
     Colaboradores colaboradores = new Colaboradores();
-
+    Fornecedores fornecedor = new Fornecedores();
+    CadastroServico servicos = new CadastroServico();
+    CadastroFilial filiais = new CadastroFilial();
+    
     public void apresentarMenu() {
         int menu = Integer.parseInt(JOptionPane.showInputDialog(null,
                 "1 - Colaboradores"
@@ -25,16 +28,16 @@ public class Sistema{
         while (menu != 8001) {
             switch (menu) {
                 case 1:
-                    selecaoMenu.colaboradores();
+                    colaboradores.menuColaborador();
                     break;
                 case 2:
-                    selecaoMenu.fornecedores();
+                    fornecedor.menuFornecedor();
                     break;
                 case 3:
-                    selecaoMenu.produtos();
+                    servicos.cadastroServico();
                     break;
                 case 4:
-                    selecaoMenu.filiais();
+                    filiais.CadastroFilial();
                     break;
                 case 5:
                     selecaoMenu.sobre();
