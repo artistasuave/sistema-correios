@@ -27,3 +27,4 @@ JavaApplication1/build.xml
 *.properties
 /nbproject/private/
 /build/
+/JavaApplication1/build/
