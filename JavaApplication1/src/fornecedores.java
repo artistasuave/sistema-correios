@@ -15,7 +15,7 @@ public class Fornecedores {
     public void menuFornecedor() {
 
         Fornecedores fornecedores = new Fornecedores();
-        int menu = Integer.parseInt(JOptionPane.showInputDialog(null,
+        int menuFornecedores = Integer.parseInt(JOptionPane.showInputDialog(null,
                 "1 - Cadastrar Fornecedor"
                 + "\n2 - Buscar por Razão Social"
                 + "\n3 - Buscar por CNPJ"
@@ -23,9 +23,9 @@ public class Fornecedores {
                 + "\n5 - Editar"
                 + "\n8001 - SAIR"));
 
-        while (menu != 8001) {
+        while (menuFornecedores != 8001) {
 
-            switch (menu) {
+            switch (menuFornecedores) {
                 case 1:
                     fornecedores.cadastrar();
                     break;

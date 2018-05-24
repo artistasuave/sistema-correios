@@ -13,8 +13,9 @@ import javax.swing.JOptionPane;
 public class Sistema{
     Colaboradores colaboradores = new Colaboradores();
     Fornecedores fornecedor = new Fornecedores();
-    CadastroServico servicos = new CadastroServico();
+    Servicos servicos = new Servicos();
     CadastroFilial filiais = new CadastroFilial();
+    About sobre = new About();
     
     public void apresentarMenu() {
         int menu = Integer.parseInt(JOptionPane.showInputDialog(null,
@@ -34,13 +35,13 @@ public class Sistema{
                     fornecedor.menuFornecedor();
                     break;
                 case 3:
-                    servicos.cadastroServico();
+                    servicos.menuServicos();
                     break;
                 case 4:
-                    filiais.CadastroFilial();
+                    filiais.menuFilial();
                     break;
                 case 5:
-                    selecaoMenu.sobre();
+                    sobre.menuAbout();
                     break;
                 default:
              JOptionPane.showMessageDialog(null, "Opção Inválida");
