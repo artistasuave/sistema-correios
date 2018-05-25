@@ -30,14 +30,15 @@ public class Colaboradores {
                     buscarPeloCPF();
                     break;
                 case 4:
-                    editar();
-                case 5:
                     estatisticas();
+                    break;
+                case 5:
+                    editar();
                 default:
                     JOptionPane.showMessageDialog(null, "Opção Inválida");
             }
             menuColaboradores = Integer.parseInt(JOptionPane.showInputDialog(null,
-                    "1 - Cadastrar"
+                      "\n1 - Cadastrar"
                     + "\n2 - Buscar"
                     + "\n3 - Editar"
                     + "\n4 - Estatísticas"

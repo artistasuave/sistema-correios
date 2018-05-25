@@ -39,20 +39,20 @@ public class CadastroFilial {
                          break;
                      case 5:
                          estatisticas();
-                         break;
                           default:
                      JOptionPane.showMessageDialog(null, "Opção Inválida");
            }
                                  
                 menuCadastroFiliais = Integer.parseInt(JOptionPane.showInputDialog(null,
-                      "1 - Cadastrar"
-                    + "\n2 - Buscar"
-                    + "\n3 - Editar"
-                    + "\n4 - Estatísticas"
-                    + "\n8001 - Sair"));
+                      "\n1 - Cadastrar"                  
+                     +"\n2 - Buscar Pelo nome"
+                     +"\n3 - Buscar pelo cnpj"
+                     +"\n4 - Editar"
+                     +"\n5 - Estatísticas"
+                     +"\n8001 - Sair"));
         }
     }                 
-
+                    
     String[] nomes = new String[100];
     String[] cnpjs = new String[100];
     String[] cidades = new String[100];
@@ -64,6 +64,7 @@ public class CadastroFilial {
     static int atual = 0;
 
 public void Cadastro(){
+
     solicitarInformacao(atual);
             atual++;
 }
@@ -79,8 +80,11 @@ public void editar(){
   }
 }
 public void estatisticas(){
-    
+    //Filial com maior Estoque
+  //  int tamanhoMaxEstoques[posicao] = Integer.MAX_VALUE;
+    // JOptionPane.showMessageDialog(null, maiorEstoque);
 }
+
 public void listar(){
     String texto = "";
     for(int posicao = 0; posicao < atual; posicao++){
@@ -147,7 +151,7 @@ public void solicitarInformacao(int posicao){
     quantMaxColaboradores[posicao] = Integer.parseInt(JOptionPane.showInputDialog
         ("Quantidade máxima de colaboradores").trim());
     tamanhoMaxEstoques[posicao] = Double.parseDouble(JOptionPane.showInputDialog
-        ("Tamanho do estoque").trim());
+        ("Tamanho do estoque(m2)").trim().replace("m2","").replace("m3",""));
     orcamentMaxMensal[posicao] = Double.parseDouble(JOptionPane.showInputDialog
         ("Orçamento máximo mensal").trim());
     
