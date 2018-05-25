@@ -12,15 +12,15 @@ import javax.swing.JOptionPane;
  */
 public class CadastroFilial {
     
-   public void menuCadastroFilial(){
+   public void menuFilial(){
      
        int menuCadastroFiliais = Integer.parseInt(JOptionPane.showInputDialog(null, 
-                         "1 - Cadastrar Filial"
-                        +"2 - Buscar por nome"
-                        +"3 - Buscar pelo CNPJ"
-                        +"4 - Editar"
-                        +"5 - Estatisticas"         
-                        +"8001 - SAIR"));
+                         "\n1 - Cadastrar Filial"
+                        +"\n2 - Buscar por nome"
+                        +"\n3 - Buscar pelo CNPJ"
+                        +"\n4 - Editar"
+                        +"\n5 - Estatisticas"         
+                        +"\n8001 - SAIR"));
        
        while(menuCadastroFiliais != 8001){
            
@@ -39,26 +39,20 @@ public class CadastroFilial {
                          break;
                      case 5:
                          estatisticas();
-                         \\add as estatisticas
-                 }
-   }
-   }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+                         break;
+                          default:
+                     JOptionPane.showMessageDialog(null, "Opção Inválida");
+           }
+                                 
+                menuCadastroFiliais = Integer.parseInt(JOptionPane.showInputDialog(null,
+                      "1 - Cadastrar"
+                    + "\n2 - Buscar"
+                    + "\n3 - Editar"
+                    + "\n4 - Estatísticas"
+                    + "\n8001 - Sair"));
+        }
+    }                 
+
     String[] nomes = new String[100];
     String[] cnpjs = new String[100];
     String[] cidades = new String[100];
@@ -74,7 +68,6 @@ public void Cadastro(){
             atual++;
 }
 
-
 public void editar(){
    
     String busca = JOptionPane.showInputDialog("Digite o nome da Filial para editar");
@@ -85,7 +78,9 @@ public void editar(){
       }
   }
 }
-
+public void estatisticas(){
+    
+}
 public void listar(){
     String texto = "";
     for(int posicao = 0; posicao < atual; posicao++){
@@ -127,38 +122,34 @@ public void buscaCNPJ(){
        JOptionPane.showMessageDialog(null, "O CNPJ não foi encontrado");
 }
 
-
-
 public void apresentarInformacao(int posicao){
     JOptionPane.showMessageDialog(null,
             "Nome: "+ nomes[posicao]
            +"\nCNPJ: "+ cnpjs[posicao]
            +"\nCidade: "+ cidades[posicao]
-           +"\nTelefone "+ telefones[posicao]
+           +"\nTelefone "+ telefones[posicao]//.substring(0,4).substring(5,8)
            +"\nEmail: "+ emails[posicao]
-           +"\nQuantidade máxima de colaboradores:+ "+ quantMaxColaboradores[posicao]
-           +"\nTamanho máximo do estoque:"+ tamanhoMaxEstoques[posicao]
-           +"\nOrçamento máximo mensal: "+ orcamentMaxMensal[posicao]);
+           +"\nQuantidade máxima de colaboradores: "+ quantMaxColaboradores[posicao]
+           +"\nTamanho máximo do estoque:"+ tamanhoMaxEstoques[posicao] +" m2"
+           +"\nOrçamento máximo mensal: "+ orcamentMaxMensal[posicao]+ " reais");
  
 }
-
-
-
 
 public void solicitarInformacao(int posicao){
     
     nomes[posicao] = JOptionPane.showInputDialog("Digite o nome da filial").trim();
     cnpjs[posicao] = JOptionPane.showInputDialog("Digite o CNPJ")
-            .replace(".","").replace("/","").replace(" ","");
-    cidades[posicao] = JOptionPane.showInputDialog("Cidade aonde se encontra a Filial");
-    telefones[posicao] = JOptionPane.showInputDialog("Telefone da Filial");
-    emails[posicao] = JOptionPane.showInputDialog("Email da Filial");
+         .replace(".","").replace("/","").replace(" ","").trim().replace("-","");
+    cidades[posicao] = JOptionPane.showInputDialog("Cidade aonde se encontra a Filial").trim();
+    telefones[posicao] = JOptionPane.showInputDialog("Telefone da Filial").trim().replace("-","")
+            .replace(" ","").replace(".","").replace("=","").replace("/","");
+    emails[posicao] = JOptionPane.showInputDialog("Email da Filial").trim();
     quantMaxColaboradores[posicao] = Integer.parseInt(JOptionPane.showInputDialog
-        ("Quantidade máxima de colaboradores"));
+        ("Quantidade máxima de colaboradores").trim());
     tamanhoMaxEstoques[posicao] = Double.parseDouble(JOptionPane.showInputDialog
-        ("Tamanho do estoque"));
+        ("Tamanho do estoque").trim());
     orcamentMaxMensal[posicao] = Double.parseDouble(JOptionPane.showInputDialog
-        ("Orçamento máximo mensal"));
+        ("Orçamento máximo mensal").trim());
     
    }
 } 
