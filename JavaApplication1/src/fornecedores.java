@@ -95,12 +95,15 @@ public class Fornecedores {
         }
         JOptionPane.showMessageDialog(null, texto);
     }
-    
+
     public void editar() {
-        //TODO implementar edição
-       
-            
-        
+        String busca = JOptionPane.showInputDialog("Digite o nome do fornecedor que deseja editar");
+        for (int i = 0; i < atual; i++) {
+            if (razaoSocial[i].equals(busca)) {
+                solicitarInformacao(i);
+                return;
+            }
+        }
     }
 
     public void solicitarInformacao(int posicao) {

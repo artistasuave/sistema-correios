@@ -54,7 +54,7 @@ public class Colaboradores {
     // Estatísticas: colaborador+antigo, colaborador mais jovem
     String[] regimeContratacao = new String[100];
     String[] funcao = new String[100];
-    Double[] salario = new Double[100];
+    double[] salario = new double[100];
     /*
      Estatísticas: maior salário, menor salário, média dos salários cadastrados, média dos salários por filial
      */
@@ -105,7 +105,10 @@ public class Colaboradores {
         int maisIdade = Integer.MIN_VALUE, menosIdade = Integer.MAX_VALUE;
         double maiorSalario = Integer.MIN_VALUE, menorSalario = Integer.MAX_VALUE;
 
-        if (salario > maiorSalario) {
+        if (salario(int 
+            posicao) > maiorSalario
+        
+            ) {
             maiorSalario = salario;
         }
 
@@ -161,9 +164,8 @@ public class Colaboradores {
              */
         }
     }
-}
 
-public void apresentarInformacao(int posicao) {
+    public void apresentarInformacao(int posicao) {
         JOptionPane.showMessageDialog(null,
                 "Nome: " + nome[posicao]
                 + "\nCPF: " + cpf[posicao]
