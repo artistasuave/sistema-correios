@@ -154,7 +154,7 @@ public class Colaboradores {
                             "FILIAIS DE ATUAÇÃO",
                             JOptionPane.QUESTION_MESSAGE,
                             null,
-                            nome,
+                            CadastroFilial.nomes,
                             "")
                             .toString();
             /*
