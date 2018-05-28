@@ -1,11 +1,11 @@
 
 import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Michelle de Jesus Rogério
@@ -43,11 +43,12 @@ public class Fornecedores {
                     JOptionPane.showMessageDialog(null, "Opção Inválida");
             }
             menuFornecedores = Integer.parseInt(JOptionPane.showInputDialog(null,
-                    "1 - Cadastrar"
-                    + "\n2 - Buscar"
-                    + "\n3 - Editar"
-                    + "\n4 - Estatísticas"
-                    + "\n8001 - Sair"));
+                    "1 - Cadastrar Fornecedor"
+                    + "\n2 - Buscar por Razão Social"
+                    + "\n3 - Buscar por CNPJ"
+                    + "\n4 - Listar"
+                    + "\n5 - Editar"
+                    + "\n8001 - SAIR"));
         }
     }
     String[] razaoSocial = new String[100];
@@ -57,7 +58,7 @@ public class Fornecedores {
     String[] periodoContratacao = new String[100];
     String[] validadeContrato = new String[100];
     String[] regimeContratacao = new String[100];
-    int atual = 0;
+    int atual = 0, ultimo = 0;
 
     public void cadastrar() {
         solicitarInformacao(atual);
@@ -84,11 +85,22 @@ public class Fornecedores {
     }
 
     public void listar() {
-        //TODO implementar listagem
+        String texto = "";
+        if (ultimo > 0) {
+            for (int posicao = 0; posicao < ultimo; posicao++) {
+                texto += razaoSocial[posicao] + "\n";
+            }
+        } else {
+            texto = "Não há empresas cadastradas.";
+        }
+        JOptionPane.showMessageDialog(null, texto);
     }
-
+    
     public void editar() {
         //TODO implementar edição
+       
+            
+        
     }
 
     public void solicitarInformacao(int posicao) {
