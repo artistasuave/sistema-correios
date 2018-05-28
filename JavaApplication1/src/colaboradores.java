@@ -51,13 +51,9 @@ public class Colaboradores {
     String[] telefone = new String[100];
     String[] email = new String[100];
     String[] dataContratacao = new String[100];
-    // Estatísticas: colaborador+antigo, colaborador mais jovem
     String[] regimeContratacao = new String[100];
     String[] funcao = new String[100];
     double[] salario = new double[100];
-    /*
-     Estatísticas: maior salário, menor salário, média dos salários cadastrados, média dos salários por filial
-     */
     String[] filialAtuacao = new String[100];
     int atual = 0;
 
@@ -87,7 +83,6 @@ public class Colaboradores {
     }
 
     public void editar() {
-        //TODO implementar edição
         String busca = JOptionPane.showInputDialog("Digite o nome para editar");
         for (int i = 0; i < atual; i++) {
             if (nome[i].equals(busca)) {
@@ -98,26 +93,35 @@ public class Colaboradores {
     }
 
     public void estatisticas() {
-        /*TODO implementar estatisticas: 
-        - Data da contratação: colaborador mais jovem e colaborador mais antigo
-        dataContratação
-        MAX.VALUE*/
-        int maisIdade = Integer.MIN_VALUE, menosIdade = Integer.MAX_VALUE;
-        double maiorSalario = Integer.MIN_VALUE, menorSalario = Integer.MAX_VALUE;
-
-        if (salario(int 
-            posicao) > maiorSalario
+        //TODO implementar estatisticas: 
+        int maisIdade = Integer.MIN_VALUE, menosIdade = Integer.MAX_VALUE, posicao = 0;
+        double maiorSalario = Integer.MIN_VALUE, menorSalario = Integer.MAX_VALUE, soma = 0, mediaSalario = 0;
         
-            ) {
+        //salariais
+        if (salario > maiorSalario) {
             maiorSalario = salario;
         }
+        if (salario < menorSalario) {
+            menorSalario = salario;
+        }
+        for (int i = 0; i <= posicao; i++) {
+            soma += salario[posicao];
+        }
+        mediaSalario = soma / posicao;
+        
+        //tempo de empresa
+        if ()
 
-        /*
-        - SALÁRIO (double)
-        salario
-        int maiorSalario = Integer.MIN_VALUE, menorSalario = Integer.MAX_VALUE;
-        double mediaSalario = 0, mediaPorFilial = 0;
-         */
+        JOptionPane.showMessageDialog(null,
+                "ESTATÍSTICAS SALARIAIS"
+                + "\nO maior salário é: " + maiorSalario
+                + "\nO menor salário é: " + menorSalario
+                + "\nA média dos salários é: " + mediaSalario
+                + "\n+\n+\n"
+                + "ESTATÍSTICAS DE CONTRATAÇÃO"
+                + "\nO colaborador com MAIOR tempo de empresa é: " + maisIdade
+                + "\nO colaborador com MENOR tempo de empresa é jovem é: " + menosIdade
+        );
     }
 
     public void solicitarInformacao(int posicao) {
@@ -156,11 +160,11 @@ public class Colaboradores {
                             null,
                             CadastroFilial.nomes,
                             "")
-                            .toString();
+                    .toString();
             /*
-            Object[] nomes = new Object[CadastroFilial.atual];
-            for (int i = 0; i < CadastroFilial.atual; i++) {
-                nomes[i] = CadastroFilial.nomes[i];
+             Object[] nomes = new Object[CadastroFilial.atual];
+             for (int i = 0; i < CadastroFilial.atual; i++) {
+             nomes[i] = CadastroFilial.nomes[i];
              */
         }
     }
