@@ -145,7 +145,7 @@ public class Fornecedores {
                 .toString();
     }
 
-    public void apresentarInformacao(int posicao) {
+    public void apresentarInformacao(int posicao){
         JOptionPane.showMessageDialog(null,
                 "Razão Social: " + razaoSocial[posicao]
                 + "\nCNPJ: " + cnpj[posicao]

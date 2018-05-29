@@ -94,35 +94,43 @@ public class Colaboradores {
 
     public void estatisticas() {
         //TODO implementar estatisticas: 
-        int maisIdade = Integer.MIN_VALUE, menosIdade = Integer.MAX_VALUE, posicao = 0;
-        double maiorSalario = Integer.MIN_VALUE, menorSalario = Integer.MAX_VALUE, soma = 0, mediaSalario = 0;
-        
-        //salariais
-        if (salario > maiorSalario) {
-            maiorSalario = salario;
-        }
-        if (salario < menorSalario) {
-            menorSalario = salario;
-        }
-        for (int i = 0; i <= posicao; i++) {
-            soma += salario[posicao];
-        }
-        mediaSalario = soma / posicao;
-        
-        //tempo de empresa
-        if ()
+        int maisIdade = Integer.MIN_VALUE, menosIdade = Integer.MAX_VALUE;
+        double maiorSalario = Integer.MIN_VALUE, menorSalario = Integer.MAX_VALUE, soma = 0, mediaSalario = 0, atual = 0;
 
+        // salariais
+         for (int i = 0; i < atual; i++){
+            if (salario[i] < menorSalario) {
+                menorSalario = salario[i];
+            }
+            if (salario[i] > maiorSalario) {
+                maiorSalario = salario[i];       
+            }
+        for (i = 0; i < atual; i++) {
+            soma += salario[atual];
+        }
+        mediaSalario = soma / atual;
+        
+        // tempo de empresa
+        for (i = 0; i < atual; i++){
+        if (dataContratacao[i]<menosIdade){
+           menosIdade = nome[atual]; 
+        }
+        if (dataContratacao[i]>maisIdade){
+            maisIdade = nome[atual];
+        }
+       
+        
         JOptionPane.showMessageDialog(null,
                 "ESTATÍSTICAS SALARIAIS"
-                + "\nO maior salário é: " + maiorSalario
-                + "\nO menor salário é: " + menorSalario
+                /*+ "\nO maior salário é: " + maiorSalario
+                + "\nO menor salário é: " + menorSalario */
                 + "\nA média dos salários é: " + mediaSalario
                 + "\n+\n+\n"
                 + "ESTATÍSTICAS DE CONTRATAÇÃO"
                 + "\nO colaborador com MAIOR tempo de empresa é: " + maisIdade
                 + "\nO colaborador com MENOR tempo de empresa é jovem é: " + menosIdade
         );
-    }
+        }
 
     public void solicitarInformacao(int posicao) {
         if (CadastroFilial.atual == 0) {
@@ -160,7 +168,7 @@ public class Colaboradores {
                             null,
                             CadastroFilial.nomes,
                             "")
-                    .toString();
+                            .toString();
             /*
              Object[] nomes = new Object[CadastroFilial.atual];
              for (int i = 0; i < CadastroFilial.atual; i++) {
