@@ -86,8 +86,8 @@ public class Fornecedores {
 
     public void listar() {
         String texto = "";
-        if (ultimo > 0) {
-            for (int posicao = 0; posicao < ultimo; posicao++) {
+        if (atual > 0) {
+            for (int posicao = 0; posicao < atual; posicao++) {
                 texto += razaoSocial[posicao] + "\n";
             }
         } else {
